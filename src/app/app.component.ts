@@ -1,3 +1,4 @@
+import { MegasenaService } from './loteria/megasena.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'aposteme-ui';
+
+  constructor(private megasenaService: MegasenaService) {}
+
+  getUltimoLancamento() {
+    this.megasenaService.getUltimoResultado()
+      .then(() => null);
+  }
 }
