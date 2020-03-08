@@ -1,0 +1,57 @@
+
+
+  .menu {
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 290px;
+    padding-top: 90px;
+    border-right: 1px solid #eee;
+
+    background-image: url('https://i.pinimg.com/originals/20/da/3e/20da3ed53d1be46cb8e95aeb67e11a64.jpg');
+  }
+
+  .menu__item {
+    margin: 0 auto;
+    display: block;
+    line-height: 3;
+  }
+
+  .imgLoteria {
+      width: 300px;
+      height: 50px;
+      -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+      -moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
+      box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
+  }
+
+  li {
+    opacity: 0.85;
+  }
+  li.menu__item:hover {
+    opacity: 1;
+  }
+
+  .nav {
+    color: white;
+    font-size: 3em;
+    padding-bottom: 20px;
+  }
+  .nav:hover {
+    color: black;
+  }
+
+
+
+  @media(max-width: 64em) {
+
+    .menu {
+    left: -350px;
+    -webkit-transition: left .2s;
+    transition: left .2s;
+    z-index: 9999;
+    }
+  }
