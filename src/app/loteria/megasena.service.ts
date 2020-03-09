@@ -15,7 +15,7 @@ export class MegasenaService {
   constructor(private http: HttpClient) { }
 
   getUltimoResultado(): Promise<any> {
-    return this.http.get(`${this.megaSena02}`)
+    return this.http.get(`${this.megaSena01}`)
       .toPromise()
       .then(response =>  {
         console.log(response);
