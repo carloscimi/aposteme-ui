@@ -10,6 +10,8 @@ import { SelectItem } from 'primeng/api/selectitem';
 })
 export class AppComponent implements OnInit {
 
+  exibindoMenu;
+
     types: SelectItem[];
     selectedType: string;
 
@@ -19,6 +21,10 @@ export class AppComponent implements OnInit {
         {label: 'House', value: 'House'},
         {label: 'Studio', value: 'Studio'}
     ];
+  }
+
+  menuToggle() {
+    return this.exibindoMenu = !this.exibindoMenu;
   }
 
   ngOnInit() {

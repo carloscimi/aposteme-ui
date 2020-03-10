@@ -1,21 +1,22 @@
 <div class="container">
-  
-  <div class="topbar">
-    <a href="#" class="nav-button">
+
+  <nav class="navbar">
+    <a href="javascript:;" class="navbar-toggle" (click)='menuToggle();'>
       <i class="pi pi-bars"></i>
     </a>
 
     <a href="#" class="logo">
       <img alt="logo" src="https://3.bp.blogspot.com/-eGR_jPqRZBA/Wet2lxJydQI/AAAAAAAAADw/8J-n3JDrWHI27kDajGcHr8rmGi3xpCeNQCLcBGAs/s1600/megasena_logo.png">
     </a>
-
-    
-  </div>
+  </nav>
 
   <div class="content">
     Conteudo
   </div>
 
-  <app-menu></app-menu>
+
+  <div [ngClass]="{ 'menu': true, 'active': exibindoMenu}">
+    <app-menu></app-menu>
+  </div>
 
 </div>
