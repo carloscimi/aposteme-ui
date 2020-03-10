@@ -2,10 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MegasenaService {
 
   token = 'IgSPnNGki4takzD';
@@ -17,8 +14,6 @@ export class MegasenaService {
   getUltimoResultado(): Promise<any> {
     return this.http.get(`${this.megaSena01}`)
       .toPromise()
-      .then(response =>  {
-        console.log(response);
-      });
+      .then(response => response);
   }
 }

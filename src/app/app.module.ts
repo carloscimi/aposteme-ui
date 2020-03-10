@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 
+import { CardModule } from 'primeng/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,8 @@ import { MenuComponent } from './menu/menu.component';
     BrowserModule,
     HttpClientModule,
     ButtonModule,
-    FormsModule
+    FormsModule,
+    CardModule
   ],
   providers: [MegasenaService],
   bootstrap: [AppComponent]

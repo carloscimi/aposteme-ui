@@ -1,6 +1,5 @@
 import { MegasenaService } from './loteria/megasena.service';
 import { Component, OnInit } from '@angular/core';
-import { SelectItem } from 'primeng/api/selectitem';
 
 
 @Component({
@@ -12,28 +11,23 @@ export class AppComponent implements OnInit {
 
   exibindoMenu;
 
-    types: SelectItem[];
-    selectedType: string;
+  resultados: any=[];
 
-  constructor(private megasenaService: MegasenaService) {
-    this.types = [
-        {label: 'Apartment', value: 'Apartment'},
-        {label: 'House', value: 'House'},
-        {label: 'Studio', value: 'Studio'}
-    ];
+  constructor(private megasenaService: MegasenaService) {};
+
+  ngOnInit() {
+    this.getUltimoLancamento();
   }
 
   menuToggle() {
     return this.exibindoMenu = !this.exibindoMenu;
   }
 
-  ngOnInit() {
-    this.getUltimoLancamento();
-  }
-
   getUltimoLancamento() {
     this.megasenaService.getUltimoResultado()
-      .then(() => null);
+    .then(results => {
+      this.resultados = results;
+    });
   }
 
 }
