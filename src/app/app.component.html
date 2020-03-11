@@ -11,7 +11,7 @@
   </nav>
 
   <div class="content">
-    <div class="content-results">
+    <div class="content-results" [hidden]="!possuiResultado">
 
       <div style="height: calc(100% - 45px);">
         <h1 class="megasena-desc">{{resultado.nome}}</h1>
@@ -39,26 +39,26 @@
               <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
               <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
               <div style="position: absolute; margin-top: -65px; margin-left: 13px; color: #fff;">
-                <h2>{{resultado.dezenas[0]}}</h2>
+                <!-- <h2>{{resultado.dezenas[0]}}</h2> -->
               </div>
               <div style="position: absolute; margin-top: -64px; margin-left: 63px; color: #fff;">
-                <h2>{{resultado.dezenas[1]}}</h2>
+                <!-- <h2>{{resultado.dezenas[1]}}</h2> -->
               </div>
               <div style="position: absolute; margin-top: -64px; margin-left: 113px; color: #fff;">
-                <h2>{{resultado.dezenas[2]}}</h2>
+                <!-- <h2>{{resultado.dezenas[2]}}</h2> -->
               </div>
 
               <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
               <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
               <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
               <div style="position: absolute; margin-top: -64px; margin-left: 163px; color: #fff;">
-                <h2>{{resultado.dezenas[3]}}</h2>
+                <!-- <h2>{{resultado.dezenas[3]}}</h2> -->
               </div>
               <div style="position: absolute; margin-top: -64px; margin-left: 213px; color: #fff;">
-                <h2>{{resultado.dezenas[4]}}</h2>
+                <!-- <h2>{{resultado.dezenas[4]}}</h2> -->
               </div>
               <div style="position: absolute; margin-top: -64px; margin-left: 263px; color: #fff;">
-                <h2>{{resultado.dezenas[5]}}</h2>
+                <!-- <h2>{{resultado.dezenas[5]}}</h2> -->
               </div>
             </div>
 
@@ -83,7 +83,7 @@
   </div>
 
 
-  <div class="menu" [ngClass]="{ 'active': exibindoMenu}">
+  <div class="menu" [ngClass]="{' active': exibindoMenu}">
     <app-menu></app-menu>
   </div>
 

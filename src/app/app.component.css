@@ -9,8 +9,8 @@
   overflow: hidden;
   position: fixed;
   border-right: 1px solid #eee;
-  background-image: url('https://i.pinimg.com/originals/20/da/3e/20da3ed53d1be46cb8e95aeb67e11a64.jpg');
-  /* background-color: lightseagreen; */
+  /* background-image: url('https://i.pinimg.com/originals/20/da/3e/20da3ed53d1be46cb8e95aeb67e11a64.jpg'); */
+  background-color: lightseagreen;
 }
 
 .container {
@@ -116,6 +116,13 @@
 }
 
  @media(max-width: 64em) {
+
+  .menu {
+    left: -350px;
+    /* -webkit-transition: left .2s; */
+    transition: left .2s;
+  }
+  
   .content {
     margin-left: 0;
     padding: 2px;
@@ -138,11 +145,7 @@
     text-align: center;
   }
 
-  .menu {
-    left: -350px;
-    /* -webkit-transition: left .2s; */
-    transition: left .2s;
-  }
+  
 
   .menu.active {
     left: 0;

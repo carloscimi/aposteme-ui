@@ -1,4 +1,4 @@
-import { MegasenaService } from './loteria/megasena.service';
+import { LoteriaService } from './loteria/loteria.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -24,7 +24,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     FormsModule,
     ProgressSpinnerModule
   ],
-  providers: [MegasenaService],
+  providers: [LoteriaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

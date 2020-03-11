@@ -1,4 +1,4 @@
-import { MegasenaService } from './loteria/megasena.service';
+import { LoteriaService } from './loteria/loteria.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -13,21 +13,27 @@ export class AppComponent implements OnInit {
 
   resultado: any=[];
 
-  constructor(private megasenaService: MegasenaService) {};
+  possuiResultado;
+
+  constructor(private loteriaService: LoteriaService) {};
 
   ngOnInit() {
-    this.getUltimoLancamento();
+    
   }
 
   menuToggle() {
     return this.exibindoMenu = !this.exibindoMenu;
   }
 
-  getUltimoLancamento() {
-    this.megasenaService.getUltimoResultado()
+  getUltimoLancamento(jogo) {
+    this.loteriaService.getUltimoResultado(jogo)
     .then(results => {
       this.resultado = results;
     });
+
+    console.log(this.resultado.length);
+
+    this.possuiResultado = this.resultado.length!=0;
   }
 
 }
