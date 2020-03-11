@@ -1,3 +1,18 @@
+.menu {
+  box-sizing: border-box;
+  width: 290px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  margin-top: 70px;
+  overflow: hidden;
+  position: fixed;
+  border-right: 1px solid #eee;
+  background-image: url('https://i.pinimg.com/originals/20/da/3e/20da3ed53d1be46cb8e95aeb67e11a64.jpg');
+  /* background-color: lightseagreen; */
+}
+
 .container {
    width: 100%;
    height: 100px;
@@ -60,19 +75,44 @@
    height: 50px;
  }
 
- .menu {
-  box-sizing: border-box;
-  width: 290px;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  position: fixed;
-  margin-top: 70px;
-  overflow: hidden;
-  position: fixed;
-  border-right: 1px solid #eee;
-  /* background-image: url('https://i.pinimg.com/originals/20/da/3e/20da3ed53d1be46cb8e95aeb67e11a64.jpg'); */
-  background-color: lightseagreen;
+.resultado-geral {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.dezenas {
+  width: 305px;
+  margin: 0 auto;
+}
+
+.bola-sorteio {
+  height: 50px;
+}
+
+.megasena-desc {
+  background-color: green;
+  text-align: center;
+  border-bottom: 2px solid silver;
+  margin: 0;
+  padding-bottom: 5px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.resultado-info {
+  width: 100%;
+  margin: 0;
+  background-color: #fff;
+  height: 100%;
+  padding: 20px 5px 20px 5px;
+}
+
+.premios {
+  width: 350px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid beige;
+  padding: 0 10px 10px;
 }
 
  @media(max-width: 64em) {

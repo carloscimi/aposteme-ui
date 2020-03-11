@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
 
   exibindoMenu;
 
-  resultados: any=[];
+  resultado: any=[];
 
   constructor(private megasenaService: MegasenaService) {};
 
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   getUltimoLancamento() {
     this.megasenaService.getUltimoResultado()
     .then(results => {
-      this.resultados = results;
+      this.resultado = results;
     });
   }
 

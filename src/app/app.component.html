@@ -12,35 +12,69 @@
 
   <div class="content">
     <div class="content-results">
-      
-      <div class="ui-fluid" style="height: calc(100% - 45px);">
-        <h1 style="text-align: center; border-bottom: 2px solid silver; margin: 0; padding-bottom: 5px;"><!--{{resultados.nome}}-->Mega Sena</h1>
-        <div style="width: 100%; margin: 0; background-color: #fff; height: 100%; padding: 20px 5px 20px 5px;">
-          
-          <div class="ui-g-12" style="padding: 0; border: 0px solid black; text-align: center;">
-            <div class="ui-g-4" style="padding: 0; border: 0px solid black;">
-              <b>Concurso:</b> 2240
-            </div>
-            <div class="ui-g-8" style="padding: 0; border: 0px solid black;">
-              <b>Data do concurso:</b> 07/03/2020
+
+      <div style="height: calc(100% - 45px);">
+        <h1 class="megasena-desc">{{resultado.nome}}</h1>
+        <div class="resultado-info">
+
+          <div class="ui-g-12" style="padding: 0; text-align: center;">
+            <div class="ui-g-4" style="padding: 0;">
+              <b>Concurso:</b> {{resultado.numero_concurso}}
+          </div>
+            <div class="ui-g-8" style="padding: 0;">
+              <b>Data do sorteio:</b> {{resultado.data_concurso | date:'dd/MM/yyyy'}}
             </div>
           </div>
 
-          <div style="padding-top: 50px;"></div>
+          <div style="padding-top: 100px;"></div>
 
-          <div class="ui-g-12" style="border: 1px solid black;">
-            <div class="ui-g-6" style="margin: 0 auto; border: 1px solid black;">
-              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" style="height: 50px;">
-              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" style="height: 50px;">
-              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" style="height: 50px;">
-              <div style="position: absolute; margin-top: -64px; margin-left: 12px; color: #fff;"><h2>10</h2></div>
+          <div class="resultado-geral">
+
+            <div style="text-align: center; padding-bottom: 20px;" [hidden]="!resultado.acumulou">
+              <Strong>Acumulou:</Strong> {{resultado.valor_acumulado | currency:'BRL':true:'1.2-2'}}
             </div>
-          </div>
-          <div class="ui-g-6" style="text-align: center; border: 1px solid black;">
-            <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" style="height: 50px;">
-            <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" style="height: 50px;">
-            <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" style="height: 50px;">
-            <div style="position: absolute; margin-top: -64px; margin-left: 12px; color: #fff;"><h2>10</h2></div>
+
+            <div class="dezenas">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <div style="position: absolute; margin-top: -65px; margin-left: 13px; color: #fff;">
+                <h2>{{resultado.dezenas[0]}}</h2>
+              </div>
+              <div style="position: absolute; margin-top: -64px; margin-left: 63px; color: #fff;">
+                <h2>{{resultado.dezenas[1]}}</h2>
+              </div>
+              <div style="position: absolute; margin-top: -64px; margin-left: 113px; color: #fff;">
+                <h2>{{resultado.dezenas[2]}}</h2>
+              </div>
+
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <div style="position: absolute; margin-top: -64px; margin-left: 163px; color: #fff;">
+                <h2>{{resultado.dezenas[3]}}</h2>
+              </div>
+              <div style="position: absolute; margin-top: -64px; margin-left: 213px; color: #fff;">
+                <h2>{{resultado.dezenas[4]}}</h2>
+              </div>
+              <div style="position: absolute; margin-top: -64px; margin-left: 263px; color: #fff;">
+                <h2>{{resultado.dezenas[5]}}</h2>
+              </div>
+            </div>
+
+            <div style="padding-top: 50px;"></div>
+
+            <div class="premios">
+              <h3>Prêmios</h3>
+              <div style="padding-bottom: 10px;"></div>
+              <div *ngFor="let p of resultado.premiacao">
+                <div style="text-align: left; border-bottom: 0.2px solid lightgray;">
+                    {{p.acertos}} acertos - {{p.valor_total | currency:'BRL':true:'1.2-2'}}
+                     - {{p.quantidade_ganhadores}} {{p.quantidade_ganhadores>1?'ganhadores':'ganhador'}}
+                </div>
+            </div>
+            </div>
+
           </div>
 
         </div>
@@ -49,7 +83,7 @@
   </div>
 
 
-  <div [ngClass]="{ 'menu': true, 'active': exibindoMenu}">
+  <div class="menu" [ngClass]="{ 'active': exibindoMenu}">
     <app-menu></app-menu>
   </div>
 

@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 
-import { CardModule } from 'primeng/card';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { CardModule } from 'primeng/card';
     HttpClientModule,
     ButtonModule,
     FormsModule,
-    CardModule
+    ProgressSpinnerModule
   ],
   providers: [MegasenaService],
   bootstrap: [AppComponent]

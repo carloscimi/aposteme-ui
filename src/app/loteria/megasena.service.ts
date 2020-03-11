@@ -6,13 +6,13 @@ import { Injectable } from '@angular/core';
 export class MegasenaService {
 
   token = 'IgSPnNGki4takzD';
-  megaSena01 = `https://apiloterias.com.br/app/resultado?loteria=megasena&token=${this.token}`
+  megaSena01 = `https://apiloterias.com.br/app/resultado?loteria=megasena&token=${this.token}`;
   megaSena02 = `http://confiraloterias.com.br/app/resultado?loteria=megasena&token=${this.token}`;
 
   constructor(private http: HttpClient) { }
 
   getUltimoResultado(): Promise<any> {
-    return this.http.get(`${this.megaSena01}`)
+    return this.http.get(`${this.megaSena02}`)
       .toPromise()
       .then(response => response);
   }
