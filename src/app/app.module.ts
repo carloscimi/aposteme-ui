@@ -1,3 +1,5 @@
+import localeBrl from '@angular/common/locales/pt';
+
 import { LoteriaService } from './loteria/loteria.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,10 +14,26 @@ import { MenuComponent } from './menu/menu.component';
 
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
+import { registerLocaleData } from '@angular/common';
+
+import { MegasenaComponent } from './resultado/megasena/megasena.component';
+import { LotofacilComponent } from './resultado/lotofacil/lotofacil.component';
+import { QuinaComponent } from './resultado/quina/quina.component';
+import { LotomaniaComponent } from './resultado/lotomania/lotomania.component';
+import { TimemaniaComponent } from './resultado/timemania/timemania.component';
+
+
+registerLocaleData(localeBrl, 'pt-BR');
+
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    MegasenaComponent,
+    LotofacilComponent,
+    QuinaComponent,
+    LotomaniaComponent,
+    TimemaniaComponent,
   ],
   imports: [
     BrowserModule,

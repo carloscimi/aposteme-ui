@@ -18,3 +18,74 @@ html, body {
   -webkit-box-sizing: border-box; */
   box-sizing: border-box;
 }
+
+.loteria-header {
+  text-align: center;
+  border-bottom: 2px solid silver;
+}
+
+.loteria-header > div > a > i {
+  font-size: 2em;
+  color: #fff;
+}
+
+.loteria-header > div > a > i:hover {
+  color: black;
+  -webkit-text-stroke-width: 1.0px;
+  -webkit-text-stroke-color: #fff;
+}
+
+.loteria-header > div > a:hover {
+  color: #fff;
+}
+
+.loteria-header > div > h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.content-results {
+  border: 1px solid lightgray;
+  height: 100%;
+  width: 100%;
+}
+
+.resultado-info {
+  width: 100%;
+  margin: 0;
+  background-color: #fff;
+  height: 100%;
+  padding: 60px 5px 20px 5px;
+}
+
+.resultado-geral {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.bola-sorteio {
+  height: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.bola-text {
+  position: absolute;
+  color: #fff;
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: red;
+}
+
+.dezenas {
+  width: 350px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.premios {
+  width: 350px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid beige;
+  padding: 0 10px 10px;
+}

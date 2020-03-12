@@ -9,30 +9,30 @@ import { AppComponent } from '../app.component';
 })
 export class MenuComponent {
 
-  constructor(private appComponent: AppComponent) {};
+  constructor(private appComponent: AppComponent) {}
 
   getUltimoResultadoMegaSena() {
-    this.appComponent.getUltimoLancamento('megasena');
+    this.appComponent.getUltimoResultado('megasena');
     this.appComponent.menuToggle();
   }
 
   getUltimoResultadoLotoFacil() {
-    this.appComponent.getUltimoLancamento('lotofacil');
+    this.appComponent.getUltimoResultado('lotofacil');
     this.appComponent.menuToggle();
   }
 
   getUltimoResultadoQuina() {
-    this.appComponent.getUltimoLancamento('quina');
+    this.appComponent.getUltimoResultado('quina');
     this.appComponent.menuToggle();
   }
 
   getUltimoResultadoLotoMania() {
-    this.appComponent.getUltimoLancamento('lotomania');
+    this.appComponent.getUltimoResultado('lotomania');
     this.appComponent.menuToggle();
   }
 
   getUltimoResultadoTimeMania() {
-    this.appComponent.getUltimoLancamento('timemania');
+    this.appComponent.getUltimoResultado('timemania');
     this.appComponent.menuToggle();
   }
 

@@ -12,7 +12,13 @@ export class LoteriaService {
   constructor(private http: HttpClient) { }
 
   getUltimoResultado(jogo): Promise<any> {
-    return this.http.get(`${this.api01}=${jogo}&token=${this.token}`)
+    return this.http.get(`${this.api02}=${jogo}&token=${this.token}`)
+      .toPromise()
+      .then(response => response);
+  }
+
+  getResultado(jogo, concurso): Promise<any> {
+    return this.http.get(`${this.api02}=${jogo}&token=${this.token}&concurso=${concurso}`)
       .toPromise()
       .then(response => response);
   }

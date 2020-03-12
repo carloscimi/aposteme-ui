@@ -1,0 +1,110 @@
+<div class="content-results">
+
+  <div style="height: calc(100% - 45px);">
+    <div class="ui-g-12 loteria-header lotomania">
+      <div class="ui-g-2" style="text-align: left;">
+        <a href="#" (click)="getResultadoPrevious();"><i class="pi pi-caret-left"></i></a>
+      </div>
+      <div class="ui-g-8">
+        <h2>{{resultado.nome}}</h2>
+      </div>
+      <div class="ui-g-2" style="text-align: right;">
+        <a href="#" (click)="getResultadoNext();"><i class="pi pi-caret-right"></i></a>
+      </div>
+    </div>
+
+    <div class="resultado-info">
+
+      <div class="ui-g-12" style="padding: 0; text-align: center;">
+        <div class="ui-g-4" style="padding: 0;">
+          <b>Concurso:</b> {{resultado.numero_concurso}}
+      </div>
+        <div class="ui-g-8" style="padding: 0;">
+          <b>Data do sorteio:</b> {{resultado.data_concurso | date:'dd/MM/yyyy'}}
+        </div>
+      </div>
+
+      <div style="padding-top: 100px;"></div>
+
+      <div class="resultado-geral" style="text-align: center;">
+
+        <div style="padding-bottom: 20px;" [hidden]="!resultado.acumulou">
+          <Strong>Acumulou:</Strong> {{resultado.valor_acumulado | currency:'BRL':'symbol':'4.2-2':'pt-br'}}
+        </div>
+
+        <div class="dezenas">
+            <div>
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+            </div>
+            <div>
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+            </div>
+            <div>
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+            </div>
+            <div>
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+              <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+            </div>
+            <div *ngFor="let p of ['64px', '113px', '163px', '214px', '264px']; let i = index" [ngStyle]="{'margin-left': p}" class="bola-text" style="margin-top: -226px;">
+              <h2>{{resultado.dezenas[i]}}</h2>
+            </div>
+            <div *ngFor="let p of ['64px', '113px', '163px', '214px', '264px']; let i = 'index'" [ngStyle]="{'margin-left': p}" class="bola-text" style="margin-top: -172px;">
+              <h2>{{resultado.dezenas[i+5]}}</h2>
+            </div>
+            <div *ngFor="let p of ['64px', '113px', '163px', '214px', '264px']; let i = index" [ngStyle]="{'margin-left': p}" class="bola-text" style="margin-top: -118px;">
+              <h2>{{resultado.dezenas[i+10]}}</h2>
+            </div>
+            <div *ngFor="let p of ['64px', '113px', '163px', '214px', '264px']; let i = index" [ngStyle]="{'margin-left': p}" class="bola-text" style="margin-top: -64px;">
+              <h2>{{resultado.dezenas[i+15]}}</h2>
+            </div>
+
+
+
+            <!-- <div class="bola-text" style="margin-top: -172px; margin-left: 91px;">
+              <h2>{{resultado.dezenas[1]}}</h2>
+            </div>
+            <div class="bola-text" style="margin-top: -64px; margin-left: 113px;">
+              <h2>{{resultado.dezenas[2]}}</h2>
+            </div>
+            <div class="bola-text" style="margin-top: -64px; margin-left: 163px;">
+              <h2>{{resultado.dezenas[3]}}</h2>
+            </div>
+            <div class="bola-text" style="margin-top: -64px; margin-left: 213px;">
+              <h2>{{resultado.dezenas[4]}}</h2>
+            </div> -->
+        </div>
+
+        <div style="padding-top: 50px;"></div>
+
+        <div class="premios">
+          <h3>Prêmios</h3>
+          <div style="padding-bottom: 10px;"></div>
+          <div *ngFor="let p of resultado.premiacao">
+            <div style="text-align: left; border-bottom: 0.2px solid lightgray;">
+                {{p.acertos}} números - {{p.valor_total | currency:'BRL':'symbol':'1.2-2':'pt-br'}}
+                 - {{p.quantidade_ganhadores}} {{p.quantidade_ganhadores>1?'ganhadores':'ganhador'}}
+            </div>
+        </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
