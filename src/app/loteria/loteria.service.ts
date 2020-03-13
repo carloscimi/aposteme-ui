@@ -7,7 +7,7 @@ export class LoteriaService {
 
   token = 'IgSPnNGki4takzD';
   api01 = 'https://apiloterias.com.br/app/resultado?loteria';
-  api02 = 'http://confiraloterias.com.br/app/resultado?loteria';
+  api02 = 'https://confiraloterias.com.br/app/resultado?loteria';
 
   constructor(private http: HttpClient) { }
 

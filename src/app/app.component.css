@@ -54,7 +54,7 @@
   height: 70px;
   line-height: 70px;
   text-align: center;
-  /* -webkit-transition: background-color .2s; */
+  -webkit-transition: background-color .2s;
   transition: background-color .2s;
  }
 
@@ -79,7 +79,7 @@
 
   .menu {
     left: -350px;
-    /* -webkit-transition: left .2s; */
+    -webkit-transition: left .2s;
     transition: left .2s;
   }
 
