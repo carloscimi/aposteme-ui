@@ -1,5 +1,6 @@
 import { LoteriaService } from './loteria/loteria.service';
 import { Component, OnInit } from '@angular/core';
+import { doesNotReject } from 'assert';
 
 
 @Component({
@@ -18,6 +19,8 @@ export class AppComponent implements OnInit {
 
   jogo;
 
+  resourceLoaded = true;
+
   constructor(private loteriaService: LoteriaService) {}
 
   ngOnInit() {
@@ -28,7 +31,8 @@ export class AppComponent implements OnInit {
   }
 
   getUltimoResultado(jogo) {
-    this.jogo = jogo;
+    this.startProgress();
+
     this.loteriaService.getUltimoResultado(jogo)
     .then(results => {
       this.resultado = results;
@@ -38,13 +42,16 @@ export class AppComponent implements OnInit {
       if (this.possuiResultado) {
         this.currentConcurso = this.resultado.numero_concurso;
       }
+      this.resourceLoaded = true;
 
+      this.jogo = jogo;
       // console.log(this.resultado);
     });
   }
 
   getResultadoPrevious() {
-    this.loteriaService.getResultado(this.jogo, this.currentConcurso - 1)
+
+    return this.loteriaService.getResultado(this.jogo, this.currentConcurso - 1)
     .then(results => {
       this.resultado = results;
 
@@ -53,11 +60,14 @@ export class AppComponent implements OnInit {
       if (this.possuiResultado) {
         this.currentConcurso = this.resultado.numero_concurso;
       }
+
+      this.resourceLoaded = true;
     });
   }
 
   getResultadoNext() {
-    this.loteriaService.getResultado(this.jogo, this.currentConcurso + 1)
+
+    return this.loteriaService.getResultado(this.jogo, this.currentConcurso + 1)
     .then(results => {
       this.resultado = results;
 
@@ -66,7 +76,14 @@ export class AppComponent implements OnInit {
       if (this.possuiResultado) {
         this.currentConcurso = this.resultado.numero_concurso;
       }
+
+      this.resourceLoaded = true;
     });
+  }
+
+  private startProgress() {
+    this.jogo = null;
+    this.resourceLoaded = false;
   }
 
 }

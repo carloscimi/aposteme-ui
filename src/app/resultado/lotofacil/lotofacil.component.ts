@@ -9,16 +9,32 @@ import { AppComponent } from '../../app.component';
 })
 export class LotofacilComponent {
 
+  resourceLoaded = true;
+
   @Input() resultado: any;
 
   constructor(private appComponent: AppComponent) {}
 
   getResultadoPrevious() {
-    this.appComponent.getResultadoPrevious();
+    this.startProgress();
+
+    this.appComponent.getResultadoPrevious()
+    .then( () => {
+      this.resourceLoaded = true;
+    });
   }
 
   getResultadoNext() {
-    this.appComponent.getResultadoNext();
+    this.startProgress();
+
+    this.appComponent.getResultadoNext()
+    .then( () => {
+      this.resourceLoaded = true;
+    });
+  }
+
+  private startProgress() {
+    this.resourceLoaded = false;
   }
 
 }

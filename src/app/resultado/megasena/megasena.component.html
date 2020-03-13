@@ -16,46 +16,53 @@
 
     <div class="resultado-info">
 
-      <div class="ui-g-12" style="padding: 0; text-align: center;">
-        <div class="ui-g-4" style="padding: 0;">
-          <b>Concurso:</b> {{resultado.numero_concurso}}
-      </div>
-        <div class="ui-g-8" style="padding: 0;">
-          <b>Data do sorteio:</b> {{resultado.data_concurso | date:'dd/MM/yyyy'}}
-        </div>
+      <div *ngIf="!resourceLoaded" style="right: 0; top: 0; width: 100%; text-align: center;">
+        <p-progressSpinner [style]="{width: '40px', height: '40px'}" strokeWidth="8" fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>
       </div>
 
-      <div style="padding-top: 100px;"></div>
-
-      <div class="resultado-geral">
-
-        <div style="text-align: center; padding-bottom: 20px;" [hidden]="!resultado.acumulou">
-          <Strong>Acumulou:</Strong> {{resultado.valor_acumulado | currency:'BRL':'symbol':'4.2-2':'pt-br'}}
+      <div *ngIf="resourceLoaded">
+        <div class="ui-g-12" style="padding: 0; text-align: center;">
+          <div class="ui-g-4" style="padding: 0;">
+            <b>Concurso:</b> {{resultado.numero_concurso}}
         </div>
-
-        <div class="dezenas">
-          <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
-          <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
-          <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
-          <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
-          <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
-          <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
-          <div *ngFor="let p of ['39px', '88px', '138px', '189px', '239px', '289px']; let i = index" [ngStyle]="{'margin-left': p}" class="bola-text" style="margin-top: -64px;">
-            <h2>{{resultado.dezenas[i]}}</h2>
+          <div class="ui-g-8" style="padding: 0;">
+            <b>Data do sorteio:</b> {{resultado.data_concurso | date:'dd/MM/yyyy'}}
           </div>
         </div>
 
-        <div style="padding-top: 50px;"></div>
+        <div style="padding-top: 100px;"></div>
 
-        <div class="premios">
-          <h3>Prêmios</h3>
-          <div style="padding-bottom: 10px;"></div>
-          <div *ngFor="let p of resultado.premiacao">
-            <div style="text-align: left; border-bottom: 0.2px solid lightgray;">
-                {{p.acertos}} números - {{p.valor_total | currency:'BRL':'symbol':'1.2-2':'pt-br'}}
-                 - {{p.quantidade_ganhadores}} {{p.quantidade_ganhadores>1?'ganhadores':'ganhador'}}
+        <div class="resultado-geral">
+
+          <div style="text-align: center; padding-bottom: 20px;" [hidden]="!resultado.acumulou">
+            <Strong>Acumulou:</Strong> {{resultado.valor_acumulado | currency:'BRL':'symbol':'4.2-2':'pt-br'}}
+          </div>
+
+          <div class="dezenas">
+            <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+            <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+            <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+            <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+            <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+            <img src="https://pngimage.net/wp-content/uploads/2018/05/bola-azul-png-5.png" class="bola-sorteio">
+            <div *ngFor="let p of ['39px', '88px', '138px', '189px', '239px', '289px']; let i = index" [ngStyle]="{'margin-left': p}" class="bola-text" style="margin-top: -64px;">
+              <h2>{{resultado.dezenas[i]}}</h2>
             </div>
-        </div>
+          </div>
+
+          <div style="padding-top: 50px;"></div>
+
+          <div class="premios">
+            <h3>Prêmios</h3>
+            <div style="padding-bottom: 10px;"></div>
+            <div *ngFor="let p of resultado.premiacao">
+              <div style="text-align: left; border-bottom: 0.2px solid lightgray;">
+                  {{p.acertos}} números - {{p.valor_total | currency:'BRL':'symbol':'1.2-2':'pt-br'}}
+                   - {{p.quantidade_ganhadores}} {{p.quantidade_ganhadores>1?'ganhadores':'ganhador'}}
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>

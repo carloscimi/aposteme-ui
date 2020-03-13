@@ -25,6 +25,7 @@ import { TimemaniaComponent } from './resultado/timemania/timemania.component';
 
 registerLocaleData(localeBrl, 'pt-BR');
 
+
 @NgModule({
   declarations: [
     AppComponent,
