@@ -12,7 +12,7 @@ export class MenuComponent {
   constructor(private appComponent: AppComponent) {}
 
   getUltimoResultadoMegaSena() {
-    this.appComponent.getUltimoResultado('mega_sena');
+    this.appComponent.getUltimoResultado('megasena');
     this.appComponent.menuToggle();
   }
 
