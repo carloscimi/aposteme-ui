@@ -16,7 +16,7 @@ export class LoteriaService {
   constructor(private http: HttpClient) { }
 
   getUltimoResultado(jogo): Promise<any> {
-    return this.http.get(`https://data.smartdublin.ie/cgi-bin/rtpi/realtimebusinformation?stopid=7602&format=json`)
+    return this.http.get(`${this.api02}=${jogo}&token=${this.token}`)
       .toPromise()
       .then(response => response);
 
