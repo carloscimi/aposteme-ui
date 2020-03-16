@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
       }
 
       this.jogo = jogo;
-      // console.log(this.resultado);
+      console.log(this.resultado);
     });
   }
 
