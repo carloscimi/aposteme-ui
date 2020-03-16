@@ -39,10 +39,14 @@ export class AppComponent implements OnInit {
 
       this.possuiResultado = this.resultado.length !== 0;
 
+      console.log(this.resultado);
       if (this.possuiResultado) {
         this.currentConcurso = this.resultado.numero_concurso;
+        this.resourceLoaded = true;
+        console.log('Possui resultado!');
+      } else {
+        console.log('Nao possui resultado!');
       }
-      this.resourceLoaded = true;
 
       this.jogo = jogo;
       // console.log(this.resultado);
@@ -59,9 +63,9 @@ export class AppComponent implements OnInit {
 
       if (this.possuiResultado) {
         this.currentConcurso = this.resultado.numero_concurso;
+        this.resourceLoaded = true;
       }
 
-      this.resourceLoaded = true;
     });
   }
 
@@ -75,9 +79,8 @@ export class AppComponent implements OnInit {
 
       if (this.possuiResultado) {
         this.currentConcurso = this.resultado.numero_concurso;
+        this.resourceLoaded = true;
       }
-
-      this.resourceLoaded = true;
     });
   }
 
