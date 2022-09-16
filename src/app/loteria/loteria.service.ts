@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class LoteriaService {
 
-  token = 'IgSPnNGki4takzD';
+  token = 'BZ8t2T11wkH5iVZ';
   api01 = 'https://apiloterias.com.br/app/resultado?loteria';
   api02 = 'https://confiraloterias.com.br/app/resultado?loteria';
 
@@ -17,27 +17,25 @@ export class LoteriaService {
 
   getUltimoResultado(jogo): Promise<any> {
     const url = `${this.api02}=${jogo}&token=${this.token}`;
-    console.log(url);
 
-    return this.http.get(url)
-      .toPromise()
-      .then(response => response);
-
-    // return this.http.get(`${this.apiLotodicas}${jogo}/results/last?token=${this.tokenLotodicas}`)
+    // return this.http.get(url)
     //   .toPromise()
     //   .then(response => response);
+
+    return this.http.get(`${this.apiLotodicas}${jogo}/results/last?token=${this.tokenLotodicas}`)
+      .toPromise()
+      .then(response => response);
   }
 
   getResultado(jogo, concurso): Promise<any> {
     const url = `${this.api02}=${jogo}&concurso=${concurso}&token=${this.token}`;
-    console.log(url);
 
-    return this.http.get(url)
-      .toPromise()
-      .then(response => response);
-
-    // return this.http.get(`${this.apiLotodicas}${jogo}/results/${concurso}?token=${this.tokenLotodicas}`)
+    // return this.http.get(url)
     //   .toPromise()
     //   .then(response => response);
+
+    return this.http.get(`${this.apiLotodicas}${jogo}/results/${concurso}?token=${this.tokenLotodicas}`)
+      .toPromise()
+      .then(response => response);
   }
 }
